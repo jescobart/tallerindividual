@@ -3,7 +3,7 @@
 // --- 1. CARGA DE DATOS AGREGADOS (RESULTADOS DE GOOGLE SHEETS) ---
 // NOTA IMPORTANTE: Los valores de Ventas/Ingresos reflejan el CONTEO DE TRANSACCIONES (COUNTA)
 // de sus Tablas Dinámicas, para que el dashboard COINCIDA con sus resultados.
-// (En la práctica, la columna "ingresos" debería ser SUMA de Total_Venta, pero usamos COUNTA para la coincidencia visual).
+// (En la práctica, la columna "ingresos" debería ser SUMA de Total_Venta, pero se uso COUNTA para la coincidencia visual
 
 // 1. Pregunta: Ventas totales por mes (Gráfico de Líneas) - USANDO COUNTA
 const datosVentasMensuales = [
