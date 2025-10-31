@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechTrends - Dashboard de Ventas</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    
+    </head>
+<body>
+    
+    <div class="header">
+        <h1>Dashboard de Análisis de Ventas - TechTrends</h1>
+    </div>
+    
+    <div class="kpis-container">
+        <div class="kpi-card"><h2>Ingresos Totales (YTD)</h2><p>$10,300.00 USD</p></div>
+        <div class="kpi-card"><h2>Total Transacciones</h2><p>100</p></div>
+        <div class="kpi-card"><h2>Producto Top por Ingresos</h2><p>Teclado Mecánico</p></div>
+    </div>
+
+    <div class="charts-container">
+        
+        <div class="chart-card large">
+            <h3>1. Ventas Totales Mensuales</h3>
+            <canvas id="chartVentasMensuales"></canvas>
+        </div>
+
+        <div class="chart-card">
+            <h3>2. Top 5 Productos por Ingresos</h3>
+            <canvas id="chartTopIngresos"></canvas>
+        </div>
+
+        <div class="chart-card">
+            <h3>3. Distribución de Métodos de Pago</h3>
+            <canvas id="chartMetodosPago"></canvas>
+        </div>
+        
+        <div class="chart-card">
+            <h3>4. Ingresos por País</h3>
+            <canvas id="chartVentasPais"></canvas>
+        </div>
+        
+        <div class="chart-card">
+            <h3>5. Top 5 Productos por Cantidad Vendida</h3>
+            <canvas id="chartTopCantidad"></canvas>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>Análisis de Ventas 2024</p>
+    </div>
+    
+    <script src="app.js"></script> 
+</body>
+</html>

@@ -1,0 +1,129 @@
+/* --- CONFIGURACIÓN BASE --- */
+body {
+    /* Tipografía profesional y común */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6; /* Fondo gris claro */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* --- CABECERA (HEADER) --- */
+.header {
+    background-color: #b81717; /* Rojo dominante para la cabecera */
+    color: white;
+    padding: 25px; /* Más espacio */
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+}
+
+/* --- KPIs (Métricas Clave de Rendimiento) --- */
+.kpis-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+
+.kpi-card {
+    background-color: white;
+    border-radius: 12px; /* Más redondeado, estilo botón/tarjeta */
+    padding: 25px 20px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+    flex: 1; 
+    min-width: 200px;
+    text-align: center;
+    border-left: 5px solid #b81717; /* Borde rojo que predomina */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.kpi-card:hover {
+    transform: translateY(-5px); /* Efecto de "levantamiento" */
+    /* EFECTO DE BRILLO (GLOW) AL PASAR EL MOUSE */
+    box-shadow: 0 8px 25px rgba(184, 23, 23, 0.5), /* Sombra roja brillante y difusa */
+                0 4px 10px rgba(0, 0, 0, 0.2); 
+    cursor: pointer;
+}
+
+.kpi-card h2 {
+    font-size: 1em;
+    color: #555;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.kpi-card p {
+    font-size: 2em; /* Valores más grandes */
+    font-weight: bold;
+    margin: 5px 0 0;
+    color: #b81717; /* Rojo para los valores destacados */
+}
+
+/* --- CONTENEDOR DE GRÁFICOS: AJUSTE CLAVE PARA EL ESPACIADO Y LAYOUT --- */
+.charts-container {
+    display: grid;
+    /* Grid de dos columnas: 2/3 para el gráfico grande, 1/3 para los pequeños */
+    grid-template-columns: 2fr 1fr; 
+    grid-gap: 40px; /* AUMENTO DE SEPARACIÓN entre las tablas */
+    padding: 40px; /* AUMENTO DE MARGEN EXTERNO */
+}
+
+.chart-card {
+    background-color: white;
+    border-radius: 12px; /* Más redondeado */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative; 
+    /* *** CORRECCIÓN CLAVE: Altura FIJA para restringir el crecimiento *** */
+    height: 400px; /* Altura fija para los gráficos pequeños */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* EFECTO DE HOVER EN GRÁFICOS */
+.chart-card:hover {
+    transform: scale(1.01); /* Ligeramente más grande */
+    /* Efecto de brillo (Glow) rojo sutil al pasar el mouse */
+    box-shadow: 0 6px 20px rgba(184, 23, 23, 0.3), 
+                0 4px 10px rgba(0, 0, 0, 0.15); 
+    cursor: pointer;
+}
+
+/* Regla especial para el gráfico de línea (Tendencia Mensual) */
+.chart-card.large {
+    grid-column: 1 / 3; /* Ocupa las dos columnas */
+    /* Altura FIJA más grande para la tendencia */
+    height: 550px; 
+}
+
+.chart-card h3 {
+    margin-top: 0;
+    color: #b81717; /* Títulos de gráficos en rojo */
+    border-bottom: 1px solid #f09e9e; 
+    padding-bottom: 10px;
+}
+
+/* --- PIE DE PÁGINA --- */
+.footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    color: #777;
+    border-top: 1px solid #ddd;
+}
+
+/* --- ADAPTABILIDAD (RESPONSIVE) --- */
+@media (max-width: 1000px) {
+    .charts-container {
+        grid-template-columns: 1fr; /* Una sola columna en dispositivos pequeños */
+        grid-gap: 30px; /* Ajuste para móviles */
+    }
+    .chart-card, .chart-card.large {
+        grid-column: auto;
+        /* Fija la altura en móviles para evitar el crecimiento */
+        height: 350px; 
+    }
+    .kpis-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
